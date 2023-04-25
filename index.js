@@ -44,13 +44,13 @@ function init() {
         // console.log(res)
         switch(res.shape){
             case 'Square':
-                logo = new Square(res.text, res.textColor, res.logoColor, res.shape);
+                logo = new Square(res.text, res.textColor, res.logoColor);
                 break;
             case 'Circle':
-                logo = new Circle(res.text, res.textColor, res.logoColor, res.shape);
+                logo = new Circle(res.text, res.textColor, res.logoColor);
                 break;
             case 'Triangle':
-                logo = new Triangle(res.text, res.textColor, res.logoColor, res.shape);
+                logo = new Triangle(res.text, res.textColor, res.logoColor);
                 break;
         }
 
