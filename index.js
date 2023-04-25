@@ -1,4 +1,9 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
+// const Shapes = require('./lib/shapes.js');
+const Square = require('./lib/square');
+const Triangle = require('./lib/triangle.js');
+const Circle = require('./lib/circle');
 
 function init() {
     inquirer
@@ -16,7 +21,7 @@ function init() {
             message: 'Enter a color (name or hexadecimal) for text color',
             name: 'textColor',
             validate: function (input) { 
-                return input.length > 0 && input.length <= 3
+                return input.length > 0
             }
         },
         {
@@ -34,8 +39,28 @@ function init() {
             name: 'shape'
         },
     ])
-    .then((response) => {
-        console.log(response);
+    .then((res) => {
+        let logo;
+        switch(res){
+            case 'Square':
+                logo = new Square(res.text, res.textColor, res.logoColor, res.shape);
+                break;
+            case 'Circle':
+                logo = new Circle(res.text, res.textColor, res.logoColor, res.shape);
+                break;
+            case 'Triangle':
+                logo = new Triangle(res.text, res.textColor, res.logoColor, res.shape);
+                break;
+        }
+
+        // fs.writeFile('logo.svg',
+        console.log(
+`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+${logo.getShapeSVGText()}
+
+</svg>`
+)
     })
 }
 
