@@ -13,8 +13,16 @@ function init() {
         },
         {
             type: 'input',
+            message: 'Enter a color (name or hexadecimal) for text color',
+            name: 'textColor',
+            validate: function (input) { 
+                return input.length > 0 && input.length <= 3
+            }
+        },
+        {
+            type: 'input',
             message: 'Enter a color (name or hexadecimal) for your logo',
-            name: 'color',
+            name: 'logoColor',
             validate: function (input) { 
                 return input.length > 0
             }
