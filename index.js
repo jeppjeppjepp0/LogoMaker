@@ -41,7 +41,8 @@ function init() {
     ])
     .then((res) => {
         let logo;
-        switch(res){
+        // console.log(res)
+        switch(res.shape){
             case 'Square':
                 logo = new Square(res.text, res.textColor, res.logoColor, res.shape);
                 break;
@@ -53,14 +54,16 @@ function init() {
                 break;
         }
 
-        // fs.writeFile('logo.svg',
-        console.log(
+        fs.writeFile('logo.svg',
+        // console.log(
 `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
 
 ${logo.getShapeSVGText()}
 
-</svg>`
-)
+</svg>`, 
+(err) =>
+err ? console.error(err) : console.log('Success!')
+);
     })
 }
 
