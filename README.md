@@ -70,7 +70,7 @@ class Triangle extends Shapes{
 
 ## Usage 
 
-[Full Sample Video](https://drive.google.com/file/d/1iBP3kR2yE3Rek8f4Dz-h96qvx8z_cmzs/view?usp=sharing)
+[Full Sample Video](https://drive.google.com/file/d/1pGbcoH1XmXhHgAkpZ0Et_fuKHpMfVjAU/view?usp=sharing)
 
 This project used `Node.js` and `inquirer` to prompt users to enter information about a logo to. The given information is then used to generate a new logo stored to `logo.svg`. 
 
